@@ -1,0 +1,206 @@
+COMPLETE SETUP INSTRUCTIONS FOR SHOPPING WEBSITE
+=================================================
+
+This guide will help you set up your shopping website on Hostinger step by step.
+
+REQUIREMENTS:
+- Hostinger hosting account
+- Domain name
+- Access to cPanel/File Manager
+- phpMyAdmin access
+
+STEP 1: PREPARE YOUR FILES
+==========================
+1. Download all the files from this project
+2. Create a ZIP file containing all the files
+3. Make sure you have the database.sql file ready
+
+STEP 2: UPLOAD FILES TO HOSTINGER
+=================================
+1. Login to your Hostinger account
+2. Go to your hosting control panel (hPanel)
+3. Click on "File Manager"
+4. Navigate to public_html folder
+5. Upload the ZIP file containing all your website files
+6. Extract the ZIP file in public_html
+7. Delete the ZIP file after extraction
+
+Your file structure should look like:
+public_html/
+├── config/
+├── admin/
+├── assets/
+├── includes/
+├── api/
+├── index.php
+├── login.php
+├── register.php
+└── other files...
+
+STEP 3: CREATE DATABASE
+=======================
+1. In hPanel, click on "Databases" → "phpMyAdmin"
+2. Click "New" to create a new database
+3. Name your database (e.g., "shopping_website")
+4. Click "Create"
+5. Select your newly created database
+6. Click "Import" tab
+7. Choose the "database.sql" file from your computer
+8. Click "Go" to import all tables and sample data
+
+STEP 4: CONFIGURE DATABASE CONNECTION
+====================================
+1. In File Manager, navigate to config/db_connect.php
+2. Edit the file and update these values:
+
+$servername = "localhost";  // Keep as localhost
+$username = "your_db_username";  // Your database username from Hostinger
+$password = "your_db_password";  // Your database password from Hostinger
+$dbname = "shopping_website";    // Your database name
+
+To find your database credentials:
+- Go to hPanel → Databases → MySQL Databases
+- Your username and database name are listed there
+- Password is what you set when creating the database user
+
+STEP 5: SET FILE PERMISSIONS
+============================
+Set the following permissions using File Manager:
+- All PHP files: 644
+- All folders: 755
+- assets/images/ folder: 755 (for image uploads)
+
+STEP 6: TEST YOUR WEBSITE
+=========================
+1. Visit your domain name in a browser
+2. You should see the homepage with sample products
+3. Test user registration and login
+4. Test admin login at: yourdomain.com/admin/
+
+DEFAULT LOGIN CREDENTIALS:
+=========================
+Admin Login:
+- Username: admin
+- Password: admin123
+- Emergency access: yourdomain.com/admin/secret_login.php
+
+Sample User Login:
+- Username: testuser
+- Password: admin123
+
+STEP 7: CUSTOMIZE YOUR WEBSITE
+==============================
+1. Login to admin panel
+2. Go to Settings to change:
+   - Site theme
+   - Banner text
+   - WhatsApp number
+   - UPI ID for payments
+3. Go to Products to add your own products
+4. Go to Categories to manage product categories
+5. Go to Banners to upload your banner images
+6. Go to Users to manage user badges and points
+
+STEP 8: ADD PRODUCT IMAGES
+==========================
+1. Upload product images to assets/images/ folder
+2. Use File Manager to upload images
+3. Reference images in admin panel when adding products
+4. Recommended image sizes:
+   - Product images: 500x500px
+   - Banner images: 1200x400px
+   - Category images: 300x200px
+
+STEP 9: CONFIGURE PAYMENT SETTINGS
+==================================
+1. Login to admin panel
+2. Go to Settings
+3. Update UPI ID for payments
+4. Set points to rupee conversion ratio
+5. Set minimum redemption points
+
+STEP 10: SSL CERTIFICATE (IMPORTANT)
+====================================
+1. In hPanel, go to Security → SSL/TLS
+2. Enable SSL certificate for your domain
+3. Force HTTPS redirect
+4. This is important for secure payments and user data
+
+STEP 11: EMAIL CONFIGURATION (OPTIONAL)
+=======================================
+For password reset and notifications:
+1. Go to hPanel → Email Accounts
+2. Create an email account
+3. Update email settings in config/functions.php
+
+STEP 12: BACKUP SETUP
+====================
+1. Set up automatic backups in hPanel
+2. Download database backup regularly
+3. Keep local copies of your files
+
+TROUBLESHOOTING:
+===============
+
+Problem: Database connection error
+Solution: Check database credentials in config/db_connect.php
+
+Problem: Images not displaying
+Solution: Check file permissions and image paths
+
+Problem: Admin panel not accessible
+Solution: Use emergency access link: yourdomain.com/admin/secret_login.php
+
+Problem: User registration not working
+Solution: Check database connection and user table structure
+
+Problem: Payment not working
+Solution: Update UPI ID in admin settings
+
+IMPORTANT SECURITY NOTES:
+=========================
+1. Change default admin password immediately
+2. Remove or secure the secret_login.php file after setup
+3. Keep your website and database updated
+4. Use strong passwords for all accounts
+5. Enable SSL certificate
+6. Regular backup your data
+
+FEATURES INCLUDED:
+=================
+✓ User registration/login with referral system
+✓ Product catalog with categories
+✓ Shopping cart and wishlist
+✓ User badges (Silver, Gold, Platinum, Elite)
+✓ Points system and redemption
+✓ Admin panel with full management
+✓ Mobile-responsive design
+✓ Payment integration (UPI)
+✓ Order management
+✓ Banner management
+✓ Theme customization
+✓ WhatsApp integration
+✓ Product ratings and reviews
+
+SUPPORT:
+========
+If you encounter any issues:
+1. Check the troubleshooting section above
+2. Verify all file permissions are correct
+3. Check database connection settings
+4. Ensure all files are uploaded correctly
+5. Check Hostinger's error logs in hPanel
+
+MAINTENANCE:
+===========
+Regular tasks:
+1. Backup database weekly
+2. Update product inventory
+3. Review user redemption requests
+4. Monitor website performance
+5. Update banner images and offers
+
+Your website is now ready to use! 
+Visit your domain to see your fully functional shopping website.
+
+Remember to customize the content, add your products, and configure all settings according to your business needs.
